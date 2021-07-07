@@ -6,7 +6,7 @@ package stepDefinitions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import PojoPayload.ObjectMapperCustom;
-import PojoPayload.PojoManager;
+import PojoPayload.ObjectManager;
 import RestMethod.CommonRestMethod;
 import TestingCommon.BaseUrl;
 import TestingCommon.CommonUtilFunctions;
@@ -28,7 +28,7 @@ public class stepDefinitions extends CommonUtilFunctions{
 	@Given("Create Repo Payload with {string} and {string}")
 	public void create_repo_payload(String name, String description) throws JsonProcessingException {
 		payload = ObjectMapperCustom
-				.ObjectMapper(PojoManager.getCreateRepoPOJOObject(name, description));
+				.ObjectMapper(ObjectManager.getCreateRepoPOJOObject(name, description));
 		
 		System.out.println("This is the payload" + payload);
 	}
@@ -36,7 +36,7 @@ public class stepDefinitions extends CommonUtilFunctions{
 	@When("User calls {string} Post API Call with {string} Token")
 	public void user_calls_post_api_call(String directory, String token) {
 		
-		response = CommonRestMethod.postRequest(directory, payload, token);
+//		response = CommonRestMethod.postRequest(directory, payload, token);
 	}
 
 	@Then("API call got Successfully with status Code {int}")

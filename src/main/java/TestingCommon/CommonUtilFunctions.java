@@ -1,7 +1,5 @@
 package TestingCommon;
 
-
-
 import io.restassured.path.json.JsonPath;
 
 public class CommonUtilFunctions {
