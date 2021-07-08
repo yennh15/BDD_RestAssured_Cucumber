@@ -22,9 +22,8 @@ public class CommonRestMethod {
 		return response;
 	}
 	
-	public static Response getRequestWithTokenAndParam(String requestURI, String bearerToken, String Param) {
+	public static Response getRequestWithToken(String requestURI, String bearerToken) {
 		RestFWLogger.info("Base URL is - " + BookBaseTest.getBaseURL());
-		requestURI = requestURI+"/"+ Param;
 		RestFWLogger.info("Resouce path is - " +requestURI );
 		RequestSpecification requestSpecification = RestAssured.given();
 		requestSpecification.contentType(ContentType.JSON);
