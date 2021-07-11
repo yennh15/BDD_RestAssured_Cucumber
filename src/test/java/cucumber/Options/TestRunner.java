@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"src/test/java/bookFeature"},
+		features = {"src/test/java/userFeature"},
 		plugin = {"json:target/jsonReports/cucumber-report.json"},
 		glue = {"stepDefinitions"}, 
 		dryRun = false,

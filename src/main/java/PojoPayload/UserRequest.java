@@ -1,9 +1,9 @@
 package PojoPayload;
 
-public class AuthorizationRequest {
+public class UserRequest {
 	private String userName;
 	private String password;
-	public AuthorizationRequest(String userName, String password) {
+	public UserRequest(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
 	}

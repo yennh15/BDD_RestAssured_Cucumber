@@ -12,7 +12,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class CommonRestMethod {
-	public static Response getRequest(String requestURI) {
+	public Response getRequest(String requestURI) {
 		RestFWLogger.info("Base URL is - " + BookBaseTest.getBaseURL());
 		RestFWLogger.info("Resouce path is - " + requestURI);
 		RequestSpecification requestSpecification = RestAssured.given();
@@ -21,10 +21,10 @@ public class CommonRestMethod {
 		RestFWLogger.info("Response is - " + response.getBody().asString());
 		return response;
 	}
-	
-	public static Response getRequestWithToken(String requestURI, String bearerToken) {
+
+	public Response getRequestWithToken(String requestURI, String bearerToken) {
 		RestFWLogger.info("Base URL is - " + BookBaseTest.getBaseURL());
-		RestFWLogger.info("Resouce path is - " +requestURI );
+		RestFWLogger.info("Resouce path is - " + requestURI);
 		RequestSpecification requestSpecification = RestAssured.given();
 		requestSpecification.contentType(ContentType.JSON);
 		requestSpecification.header("Authorization", "Bearer " + bearerToken);
@@ -33,7 +33,7 @@ public class CommonRestMethod {
 		return response;
 	}
 
-	public static Response postRequest(String requestURI, Object requestPayLoad) throws JsonProcessingException {
+	public Response postRequest(String requestURI, Object requestPayLoad) throws JsonProcessingException {
 		RestFWLogger.info("Base URL is - " + BookBaseTest.getBaseURL());
 		RestFWLogger.info("Resouce path is - " + requestURI);
 		RestFWLogger.info("Request payload is - " + ObjectMapperCustom.ObjectMapper(requestPayLoad));
@@ -44,7 +44,7 @@ public class CommonRestMethod {
 		return response;
 	}
 
-	public static Response postRequest(String requestURI, Object requestPayLoad, String bearerToken)
+	public Response postRequest(String requestURI, Object requestPayLoad, String bearerToken)
 			throws JsonProcessingException {
 		RestFWLogger.info("Base URL is - " + BookBaseTest.getBaseURL());
 		RestFWLogger.info("Resouce path is - " + requestURI);
@@ -57,28 +57,28 @@ public class CommonRestMethod {
 		return response;
 	}
 
-	public static Response putRequest(String requestURI, String requestPayLoad) {
+	public Response putRequest(String requestURI, String requestPayLoad) {
 		RequestSpecification requestSpecification = RestAssured.given().body(requestPayLoad);
 		requestSpecification.contentType(ContentType.JSON);
 		Response response = requestSpecification.put(requestURI);
 		return response;
 	}
 
-	public static Response deleteRequest(String requestURI) {
+	public  Response deleteRequest(String requestURI) {
 		RequestSpecification requestSpecification = RestAssured.given();
 		requestSpecification.contentType(ContentType.JSON);
 		Response response = requestSpecification.delete(requestURI);
 		return response;
 	}
 
-	public static Response deleteRequestWithPayload(String requestURI, String requestPayLoad) {
+	public  Response deleteRequestWithPayload(String requestURI, String requestPayLoad) {
 		RequestSpecification requestSpecification = RestAssured.given().body(requestPayLoad);
 		requestSpecification.contentType(ContentType.JSON);
 		Response response = requestSpecification.delete(requestURI);
 		return response;
 	}
 
-	public static Response deleteRequest(String requestURI, String bearerToken) {
+	public  Response deleteRequest(String requestURI, String bearerToken) {
 		RestFWLogger.info("Base URL is - " + BaseUrl.getBaseURL());
 		RestFWLogger.info("Resouce path is - " + requestURI);
 		RequestSpecification requestSpecification = RestAssured.given();
@@ -88,11 +88,12 @@ public class CommonRestMethod {
 		return response;
 	}
 
-	public static Response deleteRequestWithPayload(String requestURI, Object requestPayLoad, String bearerToken) throws JsonProcessingException {
+	public  Response deleteRequestWithPayload(String requestURI, Object requestPayLoad, String bearerToken)
+			throws JsonProcessingException {
 		RestFWLogger.info("Base URL is - " + BaseUrl.getBaseURL());
 		RestFWLogger.info("Resouce path is - " + requestURI);
 		RestFWLogger.info("Request payload is - " + ObjectMapperCustom.ObjectMapper(requestPayLoad));
-		RequestSpecification requestSpecification = RestAssured.given().body(requestPayLoad);;
+		RequestSpecification requestSpecification = RestAssured.given().body(requestPayLoad);
 		requestSpecification.contentType(ContentType.JSON);
 		requestSpecification.header("Authorization", "Bearer " + bearerToken);
 		Response response = requestSpecification.delete(BookBaseTest.getBaseURL(requestURI));

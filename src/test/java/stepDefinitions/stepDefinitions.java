@@ -3,22 +3,18 @@ package stepDefinitions;
 
 
 
+import org.junit.Assert;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import PojoPayload.ObjectMapperCustom;
 import PojoPayload.ObjectManager;
-import RestMethod.CommonRestMethod;
-import TestingCommon.BaseUrl;
+import PojoPayload.ObjectMapperCustom;
 import TestingCommon.CommonUtilFunctions;
 import TestingCommon.RestFWLogger;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.response.Response;
-
-import static org.junit.Assert.*;
-
-import org.junit.Assert; 
+import io.restassured.response.Response; 
 
 public class stepDefinitions extends CommonUtilFunctions{
 	String payload;
@@ -54,7 +50,7 @@ public class stepDefinitions extends CommonUtilFunctions{
 	
 	@When("User calls {string} Delete API Call with {string} Repository name and {string} user and  {string} Token")
 	public void user_calls_delete_api_call_with_repo_name_and_token(String endpoint, String repoName, String userName, String token) {
-		response = CommonRestMethod.deleteRequest(endpoint+userName+"/"+repoName,token);
+//		response = CommonRestMethod.deleteRequest(endpoint+userName+"/"+repoName,token);
 	}
 	
 	@Given("Starting Test Case {string}")

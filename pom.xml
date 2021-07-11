@@ -112,6 +112,11 @@
 			<version>1.0.6</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>5.5.0</version>
+		</dependency>
 	</dependencies>
 
 
@@ -122,10 +127,10 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.16</version>
 				<configuration>
-                <systemPropertyVariables>
-                    <tenvironment>${env}</tenvironment>
-                </systemPropertyVariables>              
-            </configuration>
+					<systemPropertyVariables>
+						<tenvironment>${env}</tenvironment>
+					</systemPropertyVariables>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>net.masterthought</groupId>

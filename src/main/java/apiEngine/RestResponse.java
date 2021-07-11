@@ -17,6 +17,7 @@ public class RestResponse<T> implements IRestResponse<T> {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public T getBody() {
 		try {
 			 data = (T) response.getBody().as(data.getClass());

@@ -22,4 +22,7 @@ public class Route {
 	public static String userAccount() {
 		return ACCOUNT + VERSION + "/User" + "/" + ConfigReader.getInstance().getUserID();
 	}
+	public static String newUser() {
+		return ACCOUNT + VERSION + "/User";
+	}
 }
